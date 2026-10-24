@@ -1,4 +1,4 @@
-/**
+/*
 * Template Name: EstateAgency
 * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
 * Updated: Aug 09 2024 with Bootstrap v5.3.3
@@ -9,9 +9,6 @@
 (function() {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -22,8 +19,8 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
-   * Mobile nav toggle
+  /*
+    Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
@@ -36,8 +33,8 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
-  /**
-   * Hide mobile nav on same-page/hash links
+  /*
+    Hide mobile nav on same-page/hash links
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
@@ -48,8 +45,8 @@
 
   });
 
-  /**
-   * Toggle mobile nav dropdowns
+  /*
+    Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
     navmenu.addEventListener('click', function(e) {
@@ -60,8 +57,8 @@
     });
   });
 
-  /**
-   * Preloader
+  /*
+    Preloader
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
@@ -70,8 +67,8 @@
     });
   }
 
-  /**
-   * Scroll top button
+  /*
+    Scroll top button
    */
   let scrollTop = document.querySelector('.scroll-top');
 
@@ -91,8 +88,8 @@
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  /**
-   * Animation on scroll function and init
+  /*
+    Animation on scroll function and init
    */
   function aosInit() {
     AOS.init({
@@ -104,8 +101,8 @@
   }
   window.addEventListener('load', aosInit);
 
-  /**
-   * Auto generate the carousel indicators
+  /*
+   Auto generate the carousel indicators
    */
   document.querySelectorAll('.carousel-indicators').forEach((carouselIndicator) => {
     carouselIndicator.closest('.carousel').querySelectorAll('.carousel-item').forEach((carouselItem, index) => {
@@ -117,8 +114,8 @@
     });
   });
 
-  /**
-   * Init swiper sliders
+  /*
+   Init swiper sliders
    */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
@@ -136,8 +133,8 @@
 
   window.addEventListener("load", initSwiper);
 
-  /**
-   * Initiate Pure Counter
+  /*
+   Initiate Pure Counter
    */
   new PureCounter();
 
