@@ -24,6 +24,9 @@ urlpatterns = [
 
     # Main Website
     path('', include('core.urls')),
+
+    # Properties
+    path('properties/', include('properties.urls')),
 ]
 
 if settings.DEBUG:
