@@ -1,4 +1,39 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+
+# Environment variables and secrets
 .env
-/__pycache__/
-*.pyc
-/migrations/
+.env.*
+!.env.example
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+staticfiles/
+
+# Uploaded media (property images, agent photos, etc.)
+media/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Operating system
+.DS_Store
+Thumbs.db
