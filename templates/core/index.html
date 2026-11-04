@@ -7,54 +7,84 @@
 {% block content %}
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
+        <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            {% for property in featured_properties %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{{ property.main_image.url }}" alt="{{ property.title }}">
 
-      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-container">
+                        <div>
+                            <p>{{ property.location }}</p>
 
-        <div class="carousel-item active">
-          <img src="{% static 'img/hero-carousel/hero-carousel-1.jpg' %}" alt="">
-          <div class="carousel-container">
-            <div>
-              <p>Nairobi, Kenya</p>
-              <h2><span>1042</span> Kimathi Road</h2>
-              <a href="property-single.html" class="btn-get-started">rent | ksh 22,000</a>
+                            <h2>{{ property.title }}</h2>
+
+                            <a href="#" class="btn-get-started">
+                                {{ property.get_listing_type_display }} |
+                                KSh {{ property.price|floatformat:0 }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="carousel-item active">
+                    <img src="{% static 'img/hero-carousel/hero-carousel-1.jpg' %}" alt="Featured property">
+
+                    <div class="carousel-container">
+                        <div>
+                            <p>PropertyPlus | Nairobi, Kenya</p>
+                            <h2>Find Your Next Home</h2>
+                            <a href="#" class="btn-get-started">
+                            Explore Properties
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <!--
+            <div class="carousel-item active">
+                <img src="{% static 'img/hero-carousel/hero-carousel-1.jpg' %}" alt="">
+                <div class="carousel-container">
+                <div>
+                    <p>Nairobi, Kenya</p>
+                    <h2><span>1042</span> Kimathi Road</h2>
+                    <a href="property-single.html" class="btn-get-started">rent | ksh 22,000</a>
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="carousel-item">
-          <img src="{% static 'img/hero-carousel/hero-carousel-2.jpg' %}" alt="">
-          <div class="carousel-container">
-            <div>
-              <p>Nairobi, Kenya</p>
-              <h2><span>2347</span> Moi Avebue Street</h2>
-              <a href="property-single.html" class="btn-get-started">sale | ksh 56,000</a>
+            <div class="carousel-item">
+                <img src="{% static 'img/hero-carousel/hero-carousel-2.jpg' %}" alt="">
+                <div class="carousel-container">
+                <div>
+                    <p>Nairobi, Kenya</p>
+                    <h2><span>2347</span> Moi Avebue Street</h2>
+                    <a href="property-single.html" class="btn-get-started">sale | ksh 56,000</a>
+                </div>
+                </div>
             </div>
-          </div>
+
+            <div class="carousel-item">
+                <img src="{% static 'img/hero-carousel/hero-carousel-3.jpg' %}" alt="">
+                <div class="carousel-container">
+                <div>
+                    <p>Nairobi, Kenya</p>
+                    <h2><span>2047</span> Kenyatta Avenue street</h2>
+                    <a href="property-single.html" class="btn-get-started">rent | ksh 23,000</a>
+                </div>
+                </div>
+            </div> -->
+
+            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
+
+            <ol class="carousel-indicators"></ol>
         </div>
-
-        <div class="carousel-item">
-          <img src="{% static 'img/hero-carousel/hero-carousel-3.jpg' %}" alt="">
-          <div class="carousel-container">
-            <div>
-              <p>Nairobi, Kenya</p>
-              <h2><span>2047</span> Kenyatta Avenue street</h2>
-              <a href="property-single.html" class="btn-get-started">rent | ksh 23,000</a>
-            </div>
-          </div>
-        </div>
-
-        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-        <ol class="carousel-indicators"></ol>
-
-      </div>
-
     </section> <!-- Hero Section -->
 
     <!-- Services Section -->
@@ -153,70 +183,59 @@
 
     <!-- Agents Section -->
     <section id="agents" class="agents section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Our Agents</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div> <!-- End Section Title -->
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Our Agents</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+        <div class="container">
+            <div class="row gy-5">
+                {% for agent in agents %}
+                <div class="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-delay="{{ forloop.counter }}00">
 
-      <div class="container">
+                    <div class="member">
+                        <div class="pic">
+                            <img src="{{ agent.photo.url }}" class="img-fluid" alt="{{ agent.full_name }}">
+                        </div>
+                        <div class="member-info">
+                            <h4>{{ agent.full_name }}</h4>
+                            <span>{{ agent.position }}</span>
+                            <div class="social">
+                                {% if agent.facebook %}
+                                    <a href="{{ agent.facebook }}" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-facebook"></i>
+                                    </a>
+                                {% endif %}
 
-        <div class="row gy-5">
+                                {% if agent.instagram %}
+                                    <a href="{{ agent.instagram }}" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-instagram"></i>
+                                    </a>
+                                {% endif %}
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <div class="pic"><img src="{% static 'img/team/team-1.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Natasha Rommanof</h4>
-                <span>Chief Executive Officer</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                                {% if agent.linkedin %}
+                                    <a href="{{ agent.linkedin }}" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-linkedin"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <div class="pic"><img src="{% static 'img/team/team-2.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Sarah Conor</h4>
-                <span>Rent Manager</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                {% empty %}
+
+                <div class="col-12 text-center">
+                    <p>Our team profiles will be available soon.</p>
                 </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <div class="pic"><img src="{% static 'img/team/team-3.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>William Dafoe</h4>
-                <span>Sales manager<br></span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
+                {% endfor %} <!-- End Team Member -->
             </div>
-          </div><!-- End Team Member -->
-
         </div>
-
-      </div>
-
-    </section><!-- /Agents Section -->
+    </section> <!-- /Agents Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
