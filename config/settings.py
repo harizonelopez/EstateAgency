@@ -135,8 +135,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+DEFAULT_FROM_EMAIL = 'noreply@estateagency.local'
+
+AGENCY_EMAIL = 'harizonelopez23@gmail.com'

@@ -1,5 +1,7 @@
 from django import forms
 from .models import Enquiry
+import dns.resolver
+from django.core.exceptions import ValidationError
 
 class EnquiryForm(forms.ModelForm):
     class Meta:
@@ -39,3 +41,38 @@ class EnquiryForm(forms.ModelForm):
                 'placeholder': 'Write your enquiry here...',
             }),
         }
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        domain = email.rsplit('@', 1)[1]
+
+        domain_has_route = False
+
+        for record_type in ('MX', 'A', 'AAAA'):
+            try:
+                dns.resolver.resolve(domain, record_type, lifetime=5)
+                domain_has_route = True
+                break
+
+            except dns.resolver.NoAnswer:
+                continue
+
+            except dns.resolver.NXDOMAIN:
+                raise ValidationError(
+                    'This email domain does not exist.'
+                )
+
+            except (
+                dns.resolver.NoNameservers,
+                dns.resolver.LifetimeTimeout
+            ):
+                raise ValidationError(
+                    'We could not verify this email domain. Please try again.'
+                )
+
+        if not domain_has_route:
+            raise ValidationError(
+                'This email domain cannot receive emails.'
+            )
+
+        return email
