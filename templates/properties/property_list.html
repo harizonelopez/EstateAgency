@@ -47,7 +47,7 @@
                                 | KSh {{ property.price|floatformat:0 }}
                             </span>
                             <h3>
-                                <a href="#" class="stretched-link">
+                                <a href="{% url 'properties:detail' property.slug %}" class="stretched-link">
                                     {{ property.title }}
                                 </a>
                             </h3>
