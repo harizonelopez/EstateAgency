@@ -18,17 +18,17 @@ class EnquiryForm(forms.ModelForm):
         widgets = {
             'full_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Your Full Name',
+                'placeholder': 'Your full name',
             }),
 
             'email': forms.EmailInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Your Email Address',
+                'placeholder': 'Your email address',
             }),
 
             'phone': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Your Phone Number ie 0787654321',
+                'placeholder': 'Your phone number',
                 'maxlength': '10',
                 'inputmode': 'numeric',
             }),
