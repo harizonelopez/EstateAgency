@@ -24,14 +24,9 @@ def property_detail(request, slug):
         form = EnquiryForm(request.POST)
         if form.is_valid():
             enquiry = form.save(commit=False)
-
-            # Associate the enquiry with this property
-            enquiry.property = property
+            enquiry.property = property # Associate the enquiry with this property
             enquiry.save()
-            messages.success(
-                request,
-                'Your enquiry has been submitted successfully!'
-            )
+            messages.success( request, 'Your enquiry has been submitted successfully!' )
             return redirect( 'properties:detail', slug=property.slug )
 
     else:
