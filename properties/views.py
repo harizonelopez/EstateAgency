@@ -52,6 +52,14 @@ def property_detail(request, slug):
             """
 
             send_mail(
+                subject=subject,
+                message=message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.AGENCY_EMAIL],
+                fail_silently=False,
+            )
+
+            send_mail(
                 subject=f'We received your enquiry - {property.title}',
                 message=f"""
                     Hello {enquiry.full_name},
