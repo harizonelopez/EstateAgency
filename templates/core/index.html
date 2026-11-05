@@ -19,7 +19,7 @@
 
                             <h2>{{ property.title }}</h2>
 
-                            <a href="#" class="btn-get-started">
+                            <a href="{% url 'properties:detail' property.slug %}" class="btn-get-started">
                                 {{ property.get_listing_type_display }} |
                                 KSh {{ property.price|floatformat:0|intcomma }}
                             </a>
@@ -30,15 +30,16 @@
                 <div class="carousel-item active">
                     <img src="{% static 'img/hero-carousel/hero-carousel-1.jpg' %}" alt="Featured property">
 
+                    <!--
                     <div class="carousel-container">
                         <div>
                             <p>PropertyPlus | Nairobi, Kenya</p>
                             <h2>Find Your Next Home</h2>
-                            <a href="#" class="btn-get-started">
+                            <a href="{% url 'properties:list' %}" class="btn-get-started">
                             Explore Properties
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             {% endfor %}
 
