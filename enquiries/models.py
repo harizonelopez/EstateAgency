@@ -1,5 +1,6 @@
 from django.db import models
 from properties.models import Property
+from django.core.validators import RegexValidator
 
 class Enquiry(models.Model):
 
@@ -24,12 +25,20 @@ class Enquiry(models.Model):
         related_name='enquiries'
     )
 
-    full_name = models.CharField(max_length=150)
+    full_name = models.CharField(max_length=40)
 
     email = models.EmailField()
 
-    phone = models.CharField(max_length=20, blank=True)
-
+    phone = models.CharField(
+        max_length=10,
+        blank=True,
+        validators=[
+            RegexValidator(
+                regex=r'^(07|01)\d{8}$',
+                message='Enter a valid mobile number.'
+            )
+        ]
+    )
     enquiry_type = models.CharField(
         max_length=20,
         choices=ENQUIRY_TYPES,

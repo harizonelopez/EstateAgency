@@ -28,7 +28,9 @@ class EnquiryForm(forms.ModelForm):
 
             'phone': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Your Phone Number',
+                'placeholder': 'Your Phone Number ie 0787654321',
+                'maxlength': '10',
+                'inputmode': 'numeric',
             }),
 
             'enquiry_type': forms.Select(attrs={

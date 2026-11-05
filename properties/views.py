@@ -30,34 +30,53 @@ def property_detail(request, slug):
             enquiry.save()
 
             subject = f'New Property Enquiry - {property.title}'
-
             message = f"""
-        A new enquiry has been submitted on EstateAgency.
+                A new enquiry has been submitted on EstateAgency.
 
-        CLIENT DETAILS
-        --------------
-        Name: {enquiry.full_name}
-        Email: {enquiry.email}
-        Phone: {enquiry.phone or 'Not provided'}
+                CLIENT DETAILS
+                --------------
+                Name: {enquiry.full_name}
+                Email: {enquiry.email}
+                Phone: {enquiry.phone or 'Not provided'}
 
-        ENQUIRY DETAILS
-        ---------------
-        Type: {enquiry.enquiry_type}
-        Property: {property.title}
-        Property ID: {property.property_id}
-        Location: {property.location}
+                ENQUIRY DETAILS
+                ---------------
+                Type: {enquiry.enquiry_type}
+                Property: {property.title}
+                Property ID: {property.property_id}
+                Location: {property.location}
 
-        MESSAGE
-        -------
-        {enquiry.message}
-        """
+                MESSAGE
+                -------
+                {enquiry.message}
+            """
 
             send_mail(
-                subject,
-                message,
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.AGENCY_EMAIL],
-                fail_silently=False,
+                subject=f'We received your enquiry - {property.title}',
+                message=f"""
+                    Hello {enquiry.full_name},
+
+                    Thank you for contacting PropertyPlus EstateAgency.
+
+                    We have successfully received your enquiry and our team will get back to you.
+
+                    ENQUIRY DETAILS
+                    ---------------
+                    Property: {property.title}
+                    Property ID: {property.property_id}
+                    Enquiry Type: {enquiry.enquiry_type}
+
+                    Your message:
+                    {enquiry.message}
+
+                    Thank you for your interest.
+
+                    PropertyPlus EstateAgency Help Desk Team
+                """,
+
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[enquiry.email],
+                fail_silently=True,
             )
 
             messages.success(
