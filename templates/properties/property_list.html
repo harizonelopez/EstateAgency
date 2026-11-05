@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Properties | PropertyPlus{% endblock %}
 {% block body_class %}properties-page{% endblock %}
+{% load humanize %}
 
 {% block content %}
 <!-- Page Title -->
@@ -44,7 +45,7 @@
                         <div class="card-body">
                             <span class="sale-rent">
                                 {{ property.get_listing_type_display }}
-                                | KSh {{ property.price|floatformat:0 }}
+                                | KSh {{ property.price|floatformat:0|intcomma }}
                             </span>
                             <h3>
                                 <a href="{% url 'properties:detail' property.slug %}" class="stretched-link">

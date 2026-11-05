@@ -3,6 +3,7 @@
 
 {% block title %} PropertyPlus {% endblock %}
 {% block body_class %}index-page{% endblock %}
+{% load humanize %}
 
 {% block content %}
     <!-- Hero Section -->
@@ -20,7 +21,7 @@
 
                             <a href="#" class="btn-get-started">
                                 {{ property.get_listing_type_display }} |
-                                KSh {{ property.price|floatformat:0 }}
+                                KSh {{ property.price|floatformat:0|intcomma }}
                             </a>
                         </div>
                     </div>

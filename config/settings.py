@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # EstateAgency Apps
+    'django.contrib.humanize',
+    
     'core',
     'properties',
     'agents',
