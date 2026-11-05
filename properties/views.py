@@ -31,7 +31,7 @@ def property_detail(request, slug):
 
             subject = f'New Property Enquiry - {property.title}'
             message = f"""
-                A new enquiry has been submitted on EstateAgency.
+                A new client enquiry has been submitted.
 
                 CLIENT DETAILS
                 --------------
@@ -72,14 +72,11 @@ def property_detail(request, slug):
                     ---------------
                     Property: {property.title}
                     Property ID: {property.property_id}
-                    Enquiry Type: {enquiry.enquiry_type}
-
-                    Your message:
-                    {enquiry.message}
+                    Enquiry Type: {enquiry.enquiry_type} 
 
                     Thank you for your interest.
 
-                    PropertyPlus EstateAgency Help Desk Team
+                    PropertyPlus EstateAgency Help Desk Team.
                 """,
 
                 from_email=settings.DEFAULT_FROM_EMAIL,
