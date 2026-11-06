@@ -27,6 +27,9 @@ urlpatterns = [
 
     # Properties
     path('properties/', include('properties.urls')),
+
+    # Agents
+    path('agents/', include('agents.urls')),
 ]
 
 if settings.DEBUG:
