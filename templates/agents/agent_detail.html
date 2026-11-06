@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% block title %}Agent Details | PropertyPlus{% endblock %}
+{% block body_class %}agents-page{% endblock %}
+
+{% block content %}
+<!-- Page Title -->
+<div class="page-title" data-aos="fade">
+    <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1>{{ agent.full_name }}</h1>
+                    <p class="mb-0">{{ agent.position }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'core:home' %}">Home</a></li>
+                <li><a href="{% url 'agents:list' %}">Agents</a></li>
+                <li class="current">{{ agent.full_name }}</li>
+            </ol>
+        </div>
+    </nav>
+</div>
+<!-- End Page Title -->
+
+<!-- Agent Profile Section -->
+<section class="real-estate-2 section">
+    <div class="container" data-aos="fade-up">
+        <div class="row gy-4 align-items-stretch">
+            <!-- Agent Photo -->
+            <div class="col-lg-5">
+                <div class="portfolio-details-slider h-100">
+                    <img
+                        src="{{ agent.photo.url }}"
+                        alt="{{ agent.full_name }}"
+                        class="img-fluid rounded shadow"
+                        style="width: 100%; height: 100%; min-height: 450px; max-height: 600px; object-fit: cover;">                    
+                </div>
+            </div>
+            <!-- End Agent Photo -->
+
+            <!-- Agent Information -->
+            <div class="col-lg-7">
+                <div class="portfolio-description">
+                    <h2>{{ agent.full_name }}</h2>
+                    <h5 class="mb-3">{{ agent.position }}</h5>
+                    <p> {{ agent.bio|linebreaks }} </p>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <div class="portfolio-info">
+                                <h3>Professional Experience</h3>
+                                <ul>
+                                    <li>
+                                        <strong>Experience:</strong>
+                                        {{ agent.years_experience }} years
+                                    </li>
+                                    <li>
+                                        <strong>Position:</strong>
+                                        {{ agent.position }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="portfolio-info">
+                                <h3>Contact Details</h3>
+                                <ul>
+                                    <li>
+                                        <strong>Email:</strong>
+                                        <a href="mailto:{{ agent.email }}">
+                                            <i class="bi bi-envelope-fill"></i>  
+                                            {{ agent.email }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <strong>Phone:</strong>
+                                        <a href="tel:{{ agent.phone }}">
+                                            <i class="bi bi-telephone-fill"></i>  
+                                            {{ agent.phone }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="social mt-4 d-flex align-items-center gap-4">
+                        {% if agent.twitter %}
+                        <a href="{{ agent.twitter }}" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        {% endif %}
+
+                        {% if agent.instagram %}
+                        <a href="{{ agent.instagram }}" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        {% endif %}
+
+                        {% if agent.linkedin %}
+                        <a href="{{ agent.linkedin }}" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        {% endif %}
+                        
+                        {% if agent.facebook %}
+                        <a href="{{ agent.facebook }}" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        {% endif %}
+                    </div> <!-- End Social Media -->
+                </div>
+            </div> <!-- End Agent Information -->
+        </div>
+
+        <!-- Achievements and Specializations -->
+        <div class="row gy-4 mt-5">
+            {% if agent.specializations %}
+            <div class="col-lg-6">
+                <div class="portfolio-info h-100">
+                    <h3>
+                        <i class="bi bi-award"></i>
+                        Areas of Specialization
+                    </h3>
+                    <p>{{ agent.specializations|linebreaks }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if agent.achievements %}
+            <div class="col-lg-6">
+                <div class="portfolio-info h-100">
+                    <h3>
+                        <i class="bi bi-trophy"></i>
+                        Achievements
+                    </h3>
+                    <p>{{ agent.achievements|linebreaks }}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <!-- End Achievements and Specializations -->
+
+        <!-- Agent Services -->
+        <div class="portfolio-description mt-5">
+            <h2>Services Offered</h2>
+            <p> Explore the PropertyPlus services handled by
+                {{ agent.full_name }}.
+            </p>
+            <div class="row gy-4 mt-2">
+                {% for service in services %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-info h-100">
+                        <h3>
+                            <i class="bi {{ service.icon }}"></i>
+                            {{ service.title }}
+                        </h3>
+                        <p>{{ service.short_description }}</p>
+                    </div>
+                </div>
+
+                {% empty %}
+                <div class="col-12">
+                    <p>
+                        No services have been assigned to this agent yet.
+                    </p>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div> <!-- End Agent Services -->
+
+        <!-- Back to Agents -->
+        <div class="text-center mt-5">
+            <a href="{% url 'agents:list' %}" class="btn btn-primary">
+                <i class="bi bi-arrow-left"></i>
+                Back to Our Agents
+            </a>
+        </div>
+    </div>
+</section> <!-- End Agent Profile Section -->
+{% endblock %}

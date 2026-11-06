@@ -43,43 +43,18 @@
                             class="img-fluid"
                             alt="{{ agent.full_name }}">
                     </div>
-
+                    
                     <div class="member-info">
                         <h4>{{ agent.full_name }}</h4>
                         <span>{{ agent.position }}</span>
-                        <p>{{ agent.bio }}</p>
                         <p>
-                           <a href="mailto:{{ agent.email }}">
-                               <i class="bi bi-envelope"></i>
-                               <!-- {{ agent.email }} -->
-                           </a>
+                            <!--{{ agent.bio|truncatewords:20 }}-->
                         </p>
-                        <p>
-                           <a href="tel:{{ agent.phone }}">
-                               <i class="bi bi-telephone"></i>
-                               <!-- {{ agent.phone }} -->
-                           </a>
-                        </p>
-
-                        <div class="social">
-                            {% if agent.facebook %}
-                            <a href="{{ agent.facebook }}" target="_blank"
-                               rel="noopener noreferrer">
-                                <i class="bi bi-facebook"></i>
+                        <div class="mt-3">
+                            <a href="{% url 'agents:detail' agent.pk %}" class="readmore">
+                                <span>Know More</span>
+                                <i class="bi bi-arrow-right"></i>
                             </a>
-                            {% endif %}
-                            {% if agent.instagram %}
-                            <a href="{{ agent.instagram }}" target="_blank"
-                               rel="noopener noreferrer">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                            {% endif %}
-                            {% if agent.linkedin %}
-                            <a href="{{ agent.linkedin }}" target="_blank"
-                               rel="noopener noreferrer">
-                                <i class="bi bi-linkedin"></i>
-                            </a>
-                            {% endif %}
                         </div>
                     </div>
                 </div>

@@ -57,6 +57,7 @@ class AgentAdmin(admin.ModelAdmin):
                 'facebook',
                 'instagram',
                 'linkedin',
+                'twitter',
             )
         }),
 

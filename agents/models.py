@@ -11,6 +11,7 @@ class Agent(models.Model):
     photo = models.ImageField(upload_to='agents/')
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=10)
+    twitter = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
