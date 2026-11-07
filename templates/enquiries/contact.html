@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block footer %}{% endblock %}
+{% block title %}Contact Us | PropertyPlus{% endblock %}
+{% block body_class %}contact-page{% endblock %}
+
+{% block content %}
+<!-- Page Title -->
+<div class="page-title" data-aos="fade">
+    <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1>Contact Us</h1>
+                    <p class="mb-0">
+                        Have a question about buying, selling, renting or
+                        managing property? Get in touch with our team.
+                        We would be glad to assist you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'core:home' %}">Home</a></li>
+                <li class="current">Contact</li>
+            </ol>
+        </div>
+    </nav>
+</div>
+
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+            <!-- Contact Information -->
+            <div class="col-lg-4">
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-geo-alt flex-shrink-0"></i>
+                    <div>
+                        <h3>Our Address</h3>
+                        <p>C108 Mwai Street, Nairobi, Kenya</p>
+                    </div>
+                </div>
+
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bi bi-telephone flex-shrink-0"></i>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>+254 769 405 130</p>
+                    </div>
+                </div>
+
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bi bi-whatsapp flex-shrink-0"></i>
+                    <div>
+                        <a href="https://wa.me/254769405130?text=Hello%20PropertyPlus%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                          target="_blank">
+                          <p>WhatsApp</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                    <i class="bi bi-envelope flex-shrink-0"></i>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>
+                            <a href="mailto:harizonelopez23@gmail.com">
+                                info@propertyplus.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                    <i class="bi bi-clock flex-shrink-0"></i>
+                    <div>
+                        <h3>Opening Hours</h3>
+                        <p>Monday - Saturday: 10AM - 8PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close">
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                    {% csrf_token %}
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <label for="{{ form.full_name.id_for_label }}" class="form-label">
+                                Full Name
+                            </label>
+                            {{ form.full_name }}
+                            {% for error in form.full_name.errors %}
+                                <small class="text-danger">{{ error }}</small>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">
+                                Email Address
+                            </label>
+                            {{ form.email }}
+                            {% for error in form.email.errors %}
+                                <small class="text-danger">{{ error }}</small>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="{{ form.phone.id_for_label }}" class="form-label">
+                                Phone Number
+                            </label>
+                            {{ form.phone }}
+                            {% for error in form.phone.errors %}
+                                <small class="text-danger">{{ error }}</small>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="{{ form.enquiry_type.id_for_label }}" class="form-label">
+                                Enquiry Type
+                            </label>
+                            {{ form.enquiry_type }}
+                            {% for error in form.enquiry_type.errors %}
+                                <small class="text-danger">{{ error }}</small>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="{{ form.message.id_for_label }}" class="form-label">
+                                Your Message
+                            </label>
+                            {{ form.message }}
+                            {% for error in form.message.errors %}
+                                <small class="text-danger">{{ error }}</small>
+                            {% endfor %}
+                        </div>
+
+                        {% if form.non_field_errors %}
+                            <div class="col-md-12 text-danger">
+                                {{ form.non_field_errors }}
+                            </div>
+                        {% endif %}
+
+                        <div class="col-md-12 text-center">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

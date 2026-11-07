@@ -34,27 +34,23 @@
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
-
     <!-- Header -->
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
             <a href="{% url 'core:home' %}" class="logo d-flex align-items-center">
                 <h1 class="sitename">Property<span>Plus</span></h1>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="{% url 'core:home' %}">Home</a></li>
                     <li><a href="{% url 'properties:list' %}">Properties</a></li>
                     <li><a href="{% url 'core:services' %}">Services</a></li>
                     <li><a href="{% url 'agents:list' %}">Agents</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'core:about' %}">About</a></li>
+                    <li><a href="{% url 'enquiries:contact' %}">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
-
         </div>
     </header>
 
@@ -64,12 +60,11 @@
         {% endblock %}
     </main>
 
+    {% block footer %}
     <!-- Footer -->
     <footer id="footer" class="footer light-background">
-
         <div class="container">
             <div class="row gy-3">
-
                 <div class="col-lg-3 col-md-6 d-flex">
                     <i class="bi bi-geo-alt icon"></i>
                     <div class="address">
@@ -110,15 +105,13 @@
                         <a href="#"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <div class="container copyright text-center mt-4">
             <p>© <span>Copyright</span> <strong class="px-1 sitename">PropertyPlus</strong> <span>All Rights Reserved</span></p>
         </div>
-
     </footer>
+    {% endblock %}
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">

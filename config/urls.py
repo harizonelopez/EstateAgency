@@ -30,6 +30,9 @@ urlpatterns = [
 
     # Agents
     path('agents/', include('agents.urls')),
+
+    # Contacts & Enquiries
+    path('contact/', include('enquiries.urls')),
 ]
 
 if settings.DEBUG:
