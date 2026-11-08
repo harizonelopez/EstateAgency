@@ -238,6 +238,7 @@ Potential improvements include:
 ## Author
 
 **Harison Onyango**
+
 Computer Science Student | Software Developer
 
 ---
