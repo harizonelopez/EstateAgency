@@ -1,67 +1,239 @@
-# EstateAgency
+# PropertyPlus – Real Estate Management Website
 
-EstateAgency is a real-estate agency application for discovering properties and contacting the agency about a listing. This README outlines the project's purpose, planned functionality, and practical guidance for development and maintenance.
+**PropertyPlus** is a Django-based real estate website designed to provide a modern and user-friendly platform for showcasing properties, connecting clients with real estate agents, and managing property enquiries.
 
-## Project status
+The platform allows visitors to explore available properties, learn about real estate services, view agent profiles, and submit enquiries. The administrative interface provides a central place to manage website content and property-related information.
 
-**In development.** The repository's implementation and configuration are the source of truth. Update this document as features and setup instructions are confirmed.
+## Features
 
-## Product scope
+### Property Management
+- Display available properties for sale and rent.
+- Browse detailed property information.
+- Organize listings by property type.
+- Display property images and galleries.
+- Highlight featured properties.
+- Manage property availability.
 
-The application is intended to support:
+### Agent Management
+- Display real estate agent profiles.
+- View agent biographies and professional experience.
+- Showcase achievements and areas of specialization.
+- Display contact and social media information.
+- Manage agent profiles through Django Admin.
 
-- Browsing residential and commercial property listings.
-- Viewing listing details, photographs, location, price, and availability.
-- Finding listings with search and filters, such as location, sale or rental, property type, and price range.
-- Sending an enquiry to the agency about a specific property.
-- Viewing agency information and contact details.
-- Using the experience on desktop, tablet, and mobile screens.
+### Enquiries and Contact
+- Submit general enquiries.
+- Request property viewings.
+- Send buying and renting enquiries.
+- Associate enquiries with specific properties.
+- Validate submitted contact information.
+- Track enquiry status through the administrative interface.
+- Send email notifications using Django's email framework.
 
-## Typical visitor workflow
+### Website Content
+- Homepage with property highlights.
+- About page.
+- Services page and individual service details.
+- Agent profiles and details.
+- Client testimonials managed through the database.
+- Responsive navigation and footer.
 
-1. Browse the available listings.
-2. Refine the results using the available search controls.
-3. Open a listing and review its details and current availability.
-4. Submit an enquiry with contact information and a message.
-5. The agency follows up using the details supplied.
+### Administration
+- Django's built-in administrative interface.
+- Manage property listings and images.
+- Manage real estate agents.
+- Manage services and testimonials.
+- Review and update client enquiries.
 
-## Property listing details
+## Technology Stack
 
-Where applicable, a listing should provide:
+| Technology       | Purpose                          |
+|------------------|----------------------------------|
+| Python           | Backend programming language     |
+| Django 6.1.3     | Web application framework        |
+| SQLite           | Development database             |
+| HTML5            | Page structure                   |
+| CSS3             | Custom styling                   |
+| Bootstrap        | Responsive frontend framework    |
+| JavaScript       | Frontend interactions            |
+| Pillow           | Image processing                 |
+| Python Dotenv    | Environment variable management  |
+| Django Email     | Email notifications              |
 
-| Information | Guidance |
-| --- | --- |
-| Title and description | Clearly describe the property and its notable features. |
-| Listing and property type | Identify sale or rental, and the kind of property. |
-| Price | Include currency; for rentals, state the rental period. |
-| Location | Show an appropriate public-facing address or area. |
-| Attributes | Include relevant details such as bedrooms, bathrooms, and floor area. |
-| Images | Use representative images and provide text alternatives. |
-| Availability | Make it clear whether the property is currently available for enquiry. |
+## Project Structure
 
-## Development and running the project
+```text
+    EstateAgency/
+    │
+    ├── agents/
+    │   ├── migrations/
+    │   ├── models.py
+    │   ├── views.py
+    │   ├── urls.py
+    │   └── admin.py
+    │
+    ├── config/
+    │   ├── settings.py
+    │   ├── urls.py
+    │   ├── asgi.py
+    │   └── wsgi.py
+    │
+    ├── core/
+    │   ├── migrations/
+    │   ├── models.py
+    │   ├── views.py
+    │   ├── urls.py
+    │   └── admin.py
+    │
+    ├── enquiries/
+    │   ├── migrations/
+    │   ├── models.py
+    │   ├── views.py
+    │   ├── urls.py
+    │   └── admin.py
+    │
+    ├── properties/
+    │   ├── migrations/
+    │   ├── models.py
+    │   ├── views.py
+    │   ├── urls.py
+    │   └── admin.py
+    │
+    ├── templates/
+    ├── assets/
+    ├── media/
+    ├── forms/
+    ├── .gitignore
+    ├── db.sqlite3
+    ├── manage.py
+    ├── requirements.txt
+    ├── secrets.env
+    └── README.md
+```
 
-The framework, runtime, dependencies, and commands are not established in this README. Consult the repository's manifests and configuration before installing or running the application. Document verified commands here rather than assuming a particular technology stack.
+*The structure above highlights the main application directories.*
 
-When project setup is confirmed, add:
+## Running the Application
 
-1. Supported runtime and tool versions.
-2. Dependency installation instructions.
-3. Required environment variables and a sanitized example configuration.
-4. Local development and production build commands.
-5. Test, lint, and formatting commands.
+### 1. Prerequisites
 
-Never include real credentials, customer information, or production data in documentation or source control.
+- Python 3.12.
+- Git.
 
-## Quality, accessibility, and privacy
+### 2. Clone the Repository
 
-- Validate enquiry data on the server and provide clear feedback for invalid submissions.
-- Collect only information needed to respond to an enquiry and explain its intended use.
-- Keep listing details, prices, and availability accurate; label sample content clearly.
-- Ensure interactive controls work with a keyboard and have meaningful accessible names.
-- Provide text alternatives for informative images and handle missing images gracefully.
-- Design useful empty, loading, error, and unavailable-listing states.
+```bash
+ git clone https://github.com/harizonelopez/EstateAgency.git
+```
 
-## Contribution guidance
+Navigate into the project:
 
-Keep changes focused and consistent with the existing codebase. Run the relevant checks available in the repository before submitting changes. Update this README when the setup process, supported functionality, or visitor workflows change.
+```bash
+ cd EstateAgency
+```
+
+### 3. Create a Virtual Environment
+
+```bash
+ python -m venv .env
+```
+
+Activate it on Windows:
+
+```bash
+ .env\Scripts\activate
+```
+
+### 4. Install Dependencies
+
+```bash
+ python -m pip install -r requirements.txt
+```
+
+### 5. Configure Environment Variables
+
+Create a file named `secrets.env` in the project root directory & add the following:
+
+```env
+ SECRET_KEY=`your_django_secret_key`
+ EMAIL_HOST_USER=`your_email@gmail.com`
+ EMAIL_HOST_PASSWORD=`your_email_app_password`
+ AGENCY_EMAIL=`your_agency_email@gmail.com`
+```
+
+*Replace the quoted values with your own credentials.*
+
+### 6. Apply Database Migrations
+
+```bash
+ python manage.py makemigrations
+ python manage.py migrate
+```
+
+### 7. Create an Administrator Account
+
+```bash
+ python manage.py createsuperuser
+```
+
+*Follow the prompts to create an administrator account for django admin management.*
+
+### 8. Start the Development Server
+
+```bash
+ python manage.py runserver
+```
+
+Open the URL in the browser:
+
+```text
+ http://127.0.0.1:8000
+```
+
+Access the Django admin panel:
+
+```text
+ http://127.0.0.1:8000/admin
+```
+
+## Environment Configuration
+
+The application uses environment variables for sensitive configuration, including:
+
+- Django secret key.
+- Email account credentials.
+- Agency notification email address.
+
+The development database uses SQLite, which Django creates as `db.sqlite3` after migrations.
+
+Uploaded property and agent images are stored in the media directory.
+
+## Security Notes
+
+Before deploying the application:
+
+- Set `DEBUG = False`.
+- Configure `ALLOWED_HOSTS`.
+- Use a secure production `SECRET_KEY`.
+- Keep credentials in environment variables.
+- Configure HTTPS.
+- Configure production static and media file serving.
+- Use an appropriate production database.
+
+## Future Improvements
+
+Potential improvements include:
+
+- Client accounts and enquiry tracking.
+- Online property viewing scheduling.
+- Enhanced analytics for administrators.
+
+## Author
+
+**Harison Onyango**
+
+Computer Science Student | Software Developer
+
+---
+
+*PropertyPlus EstateAgency – Making property discovery and real estate connections easier.*
