@@ -29,6 +29,69 @@
 
     <!-- Main CSS -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <style>
+        /* global aqua-background */
+        html,
+        body {
+            background: #DDF3EF !important;
+        }
+        body,
+        .main,
+        main {
+            background-color: #DDF3EF !important;
+        }
+        .main > section,
+        main > section {
+            background-color: transparent !important;
+        }
+        /*global footer-styling */
+        #footer.footer {
+            background: linear-gradient(
+                110deg,
+                #c8dcf0 0%,
+                #d8e9ed 30%,
+                #c5eee8 50%,
+                #d8e9ed 70%,
+                #c8dcf0 100%
+            ) !important;
+            color: #53677c;
+            padding: 25px 0 0;
+        }
+        #footer h4 {
+            color: #30465d;
+            margin-bottom: 10px;
+        }
+        #footer p {
+            color: #63788e;
+        }
+        #footer .icon {
+            color: #648db3;
+        }
+        #footer .social-links a {
+            color: #527ba2;
+            border-color: rgba(83, 119, 155, 0.25);
+            background: rgba(255, 255, 255, 0.35);
+            transition: all 0.3s ease;
+        }
+        #footer .social-links a:hover {
+            color: #fff;
+            background: #648db3;
+            border-color: #648db3;
+            transform: translateY(-3px);
+        }
+        #footer .copyright {
+            padding: 15px 0;
+            border-top: 1px solid rgba(83, 119, 155, 0.18);
+        }
+        #footer .copyright p {
+            color: #718398;
+        }
+        @media (max-width: 767px) {
+            #footer {
+                text-align: left;
+            }
+        }
+    </style>
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -62,14 +125,14 @@
 
     {% block footer %}
     <!-- Footer -->
-    <footer id="footer" class="footer light-background">
+    <footer id="footer" class="footer light-background" py-2>
         <div class="container">
-            <div class="row gy-3">
+            <div class="row gy-1">
                 <div class="col-lg-3 col-md-6 d-flex">
                     <i class="bi bi-geo-alt icon"></i>
                     <div class="address">
                         <h4>Address</h4>
-                        <p>C108 Mwai Street</p>
+                        <p>Rahimtula-Trust building, Moi Avenue</p>
                         <p>Nairobi, Kenya</p>
                     </div>
                 </div>
@@ -90,8 +153,8 @@
                     <div>
                         <h4>Opening Hours</h4>
                         <p>
-                            <strong>Mon-Sat:</strong> <span>10AM - 8PM</span><br>
-                            <strong>Sunday:</strong> <span>Closed</span>
+                            <strong>Sun-Fri:</strong> <span>9AM - 6PM</span><br>
+                            <strong>Saturday:</strong> <span>Closed</span>
                         </p>
                     </div>
                 </div>
@@ -107,7 +170,7 @@
                 </div>
             </div>
         </div>
-        <div class="container copyright text-center mt-4">
+        <div class="container copyright text-center mt-1">
             <p>© <span>Copyright</span> <strong class="px-1 sitename">PropertyPlus</strong> <span>All Rights Reserved</span></p>
         </div>
     </footer>

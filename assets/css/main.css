@@ -429,56 +429,70 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: #53677c;
+  background: linear-gradient(
+    135deg,
+    #edf4fa 0%,
+    #e5eef7 50%,
+    #dce8f3 100%
+  );
   font-size: 14px;
-  padding: 40px 0 0 0;
+  padding: 25px 0 0 0;
   position: relative;
 }
 
 .footer .icon {
-  color: var(--accent-color);
+  color: #648db3;
   margin-right: 15px;
   font-size: 24px;
   line-height: 0;
 }
 
 .footer h4 {
+  color: #30465d;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #63788e;
 }
 
 .footer .address p {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .footer .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid rgba(83, 119, 155, 0.25);
+  font-size: 15px;
+  color: #527ba2;
+  background: rgba(255, 255, 255, 0.35);
   margin-right: 10px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: #ffffff;
+  background: #648db3;
+  border-color: #648db3;
+  transform: translateY(-3px);
 }
 
 .footer .copyright {
-  padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 15px 0;
+  border-top: 1px solid rgba(83, 119, 155, 0.18);
 }
 
 .footer .copyright p {
   margin-bottom: 0;
+  color: #718398;
 }
 
 .footer .credits {
