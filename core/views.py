@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from properties.models import Property
 from agents.models import Agent
-from .models import Service
+from .models import Service, Testimonial
 
 def home(request):
     featured_properties = Property.objects.filter(
@@ -17,10 +17,15 @@ def home(request):
         is_active=True
     )[:3]
 
+    testimonials = Testimonial.objects.filter(
+        is_active=True
+    )[:6]
+
     context = {
         'featured_properties': featured_properties,
         'agents': agents,
         'services': services,
+        'testimonials': testimonials,
     }
     return render(request, 'core/index.html', context)
 
