@@ -63,52 +63,51 @@ The platform allows visitors to explore available properties, learn about real e
 ## Project Structure
 
 ```text
-    EstateAgency/
-    │
-    ├── agents/
-    │   ├── migrations/
-    │   ├── models.py
-    │   ├── views.py
-    │   ├── urls.py
-    │   └── admin.py
-    │
-    ├── config/
-    │   ├── settings.py
-    │   ├── urls.py
-    │   ├── asgi.py
-    │   └── wsgi.py
-    │
-    ├── core/
-    │   ├── migrations/
-    │   ├── models.py
-    │   ├── views.py
-    │   ├── urls.py
-    │   └── admin.py
-    │
-    ├── enquiries/
-    │   ├── migrations/
-    │   ├── models.py
-    │   ├── views.py
-    │   ├── urls.py
-    │   └── admin.py
-    │
-    ├── properties/
-    │   ├── migrations/
-    │   ├── models.py
-    │   ├── views.py
-    │   ├── urls.py
-    │   └── admin.py
-    │
-    ├── templates/
-    ├── assets/
-    ├── media/
-    ├── forms/
-    ├── .gitignore
-    ├── db.sqlite3
-    ├── manage.py
-    ├── requirements.txt
-    ├── secrets.env
-    └── README.md
+EstateAgency/
+│
+├── agents/
+│   ├── migrations/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   └── admin.py
+│
+├── config/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── core/
+│   ├── migrations/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   └── admin.py
+│
+├── enquiries/
+│   ├── migrations/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   └── admin.py
+│
+├── properties/
+│   ├── migrations/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   └── admin.py
+│
+├── templates/
+├── assets/
+├── media/
+├── forms/
+├── .gitignore
+├── manage.py
+├── requirements.txt
+├── secrets.env
+└── README.md
 ```
 
 *The structure above highlights the main application directories.*
@@ -142,6 +141,14 @@ Activate it on Windows:
 
 ```bash
  .env\Scripts\activate
+```
+
+OR
+
+Activate on Mac:
+
+```bash
+ source .env/bin/activate
 ```
 
 ### 4. Install Dependencies
@@ -231,7 +238,6 @@ Potential improvements include:
 ## Author
 
 **Harison Onyango**
-
 Computer Science Student | Software Developer
 
 ---
