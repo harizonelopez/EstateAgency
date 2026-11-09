@@ -16,9 +16,9 @@ class Property(models.Model):
         ('Rent', 'For Rent'),
     ]
 
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=80)
     slug = models.SlugField(unique=True, blank=True)
-    property_id = models.CharField(max_length=20, unique=True)
+    property_id = models.CharField(max_length=5, unique=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=12, decimal_places=2)
 
@@ -32,8 +32,8 @@ class Property(models.Model):
         choices=LISTING_TYPES
     )
 
-    location = models.CharField(max_length=200)
-    area = models.DecimalField(max_digits=10, decimal_places=2)
+    location = models.CharField(max_length=50)
+    area = models.DecimalField(max_digits=4, decimal_places=2)
     bedrooms = models.PositiveIntegerField(default=0)
     bathrooms = models.PositiveIntegerField(default=0)
     garages = models.PositiveIntegerField(default=0)
@@ -67,7 +67,7 @@ class PropertyImage(models.Model):
     )
 
     image = models.ImageField(upload_to='properties/gallery/')
-    alt_text = models.CharField(max_length=200, blank=True)
+    alt_text = models.CharField(max_length=50, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

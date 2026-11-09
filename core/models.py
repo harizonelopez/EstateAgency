@@ -2,14 +2,14 @@ from django.db import models
 from django.utils.text import slugify
 
 class Service(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=60)
     slug = models.SlugField(
         max_length=120,
         unique=True,
         blank=True
     )
 
-    short_description = models.CharField(max_length=250)
+    short_description = models.CharField(max_length=200)
     description = models.TextField()
     icon = models.CharField(
         max_length=50,
