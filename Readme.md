@@ -4,6 +4,12 @@
 
 The platform allows visitors to explore available properties, learn about real estate services, view agent profiles, and submit enquiries. The administrative interface provides a central place to manage website content and property-related information.
 
+## Live Demo
+
+Explore **PropertyPlus** in action and navigate its features through the deployed version below
+
+[Visit PropertyPlus](https://propertyplus-crcl.onrender.com)
+
 ## Features
 
 ### Property Management
