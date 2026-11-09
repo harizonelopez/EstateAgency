@@ -1,0 +1,528 @@
+[
+{
+  "model": "properties.property",
+  "pk": 7,
+  "fields": {
+    "title": "Luxury villa",
+    "slug": "luxury-villa",
+    "property_id": "001",
+    "description": "Spacious luxury villa in a serene neighbourhood, featuring a modern kitchen, large living area, landscaped garden, swimming pool and secure parking. Ideal for family living.",
+    "price": "45000000.00",
+    "property_type": "Villa",
+    "listing_type": "Sale",
+    "location": "Karen, Nairobi",
+    "area": "450.00",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "garages": 2,
+    "main_image": "properties/property-12.jpg",
+    "is_featured": true,
+    "is_available": true,
+    "created_at": "2026-11-05T14:58:26.490Z",
+    "updated_at": "2026-11-06T12:50:15.541Z"
+  }
+},
+{
+  "model": "properties.property",
+  "pk": 8,
+  "fields": {
+    "title": "Modern Apartment",
+    "slug": "modern-apartment",
+    "property_id": "002",
+    "description": "Contemporary apartment with spacious bedrooms, fitted kitchen, balcony, high-speed lifts, backup generator and 24-hour security. Conveniently located near shopping centres and schools.",
+    "price": "15500000.00",
+    "property_type": "Apartment",
+    "listing_type": "Sale",
+    "location": "Kilimani, Nairobi",
+    "area": "145.00",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 1,
+    "main_image": "properties/property-13.jpg",
+    "is_featured": true,
+    "is_available": true,
+    "created_at": "2026-11-05T15:02:49.081Z",
+    "updated_at": "2026-11-06T12:49:31.318Z"
+  }
+},
+{
+  "model": "properties.property",
+  "pk": 9,
+  "fields": {
+    "title": "Executive Apartment",
+    "slug": "executive-apartment",
+    "property_id": "003",
+    "description": "Fully furnished executive apartment with a modern open-plan kitchen, elegant living room, gym access, swimming pool and reliable security. Suitable for professionals and small families.",
+    "price": "95000.00",
+    "property_type": "Apartment",
+    "listing_type": "Rent",
+    "location": "Westlands, Nairobi",
+    "area": "110.00",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "garages": 1,
+    "main_image": "properties/property-14.jpg",
+    "is_featured": true,
+    "is_available": true,
+    "created_at": "2026-11-05T15:05:46.618Z",
+    "updated_at": "2026-11-06T12:48:59.969Z"
+  }
+},
+{
+  "model": "properties.property",
+  "pk": 10,
+  "fields": {
+    "title": "Modern Luxury Villa",
+    "slug": "modern-luxury-villa",
+    "property_id": "004",
+    "description": "An elegant five-bedroom villa situated in the serene neighbourhood of Karen. This property features spacious living areas, modern finishes, a landscaped garden, and a private swimming pool",
+    "price": "4500000.00",
+    "property_type": "Villa",
+    "listing_type": "Sale",
+    "location": "Karen Road, Nairobi",
+    "area": "450.00",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "garages": 2,
+    "main_image": "properties/building-1.jpg",
+    "is_featured": true,
+    "is_available": true,
+    "created_at": "2026-11-08T21:50:43.575Z",
+    "updated_at": "2026-11-08T21:51:27.927Z"
+  }
+},
+{
+  "model": "properties.property",
+  "pk": 11,
+  "fields": {
+    "title": "Contemporary City Apartment",
+    "slug": "contemporary-city-apartment",
+    "property_id": "005",
+    "description": "A beautifully designed three-bedroom apartment in Kilimani, offering convenient access to shopping centres, schools, restaurants, and major transport routes.",
+    "price": "12500000.00",
+    "property_type": "Apartment",
+    "listing_type": "Sale",
+    "location": "Kilimani, Nairobi",
+    "area": "145.00",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 1,
+    "main_image": "properties/building-3.jpg",
+    "is_featured": true,
+    "is_available": true,
+    "created_at": "2026-11-08T21:54:43.058Z",
+    "updated_at": "2026-11-08T21:54:43.058Z"
+  }
+},
+{
+  "model": "properties.property",
+  "pk": 12,
+  "fields": {
+    "title": "Prime Residencial  Plot",
+    "slug": "prime-residencial-plot",
+    "property_id": "006",
+    "description": "A well-positioned residential plot in the growing Ruiru area, suitable for building a private home or making a long-term property investment.",
+    "price": "4800000.00",
+    "property_type": "Land",
+    "listing_type": "Sale",
+    "location": "Ruiru, Kiambu",
+    "area": "450.00",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "garages": 0,
+    "main_image": "properties/property-15.jpg",
+    "is_featured": true,
+    "is_available": true,
+    "created_at": "2026-11-08T21:57:19.159Z",
+    "updated_at": "2026-11-08T21:57:19.159Z"
+  }
+},
+{
+  "model": "properties.propertyimage",
+  "pk": 9,
+  "fields": {
+    "property": 8,
+    "image": "properties/gallery/property-9.jpg",
+    "alt_text": "",
+    "created_at": "2026-11-05T15:02:49.086Z"
+  }
+},
+{
+  "model": "properties.propertyimage",
+  "pk": 10,
+  "fields": {
+    "property": 7,
+    "image": "properties/gallery/property-10.jpg",
+    "alt_text": "",
+    "created_at": "2026-11-05T15:03:08.405Z"
+  }
+},
+{
+  "model": "properties.propertyimage",
+  "pk": 11,
+  "fields": {
+    "property": 9,
+    "image": "properties/gallery/property-7.jpg",
+    "alt_text": "",
+    "created_at": "2026-11-05T15:05:46.626Z"
+  }
+},
+{
+  "model": "properties.propertyimage",
+  "pk": 12,
+  "fields": {
+    "property": 10,
+    "image": "properties/gallery/interior-7.jpg",
+    "alt_text": "",
+    "created_at": "2026-11-08T21:50:43.584Z"
+  }
+},
+{
+  "model": "properties.propertyimage",
+  "pk": 13,
+  "fields": {
+    "property": 10,
+    "image": "properties/gallery/interior-6.jpg",
+    "alt_text": "",
+    "created_at": "2026-11-08T21:51:14.913Z"
+  }
+},
+{
+  "model": "properties.propertyimage",
+  "pk": 14,
+  "fields": {
+    "property": 11,
+    "image": "properties/gallery/interior-5.jpg",
+    "alt_text": "",
+    "created_at": "2026-11-08T21:54:43.071Z"
+  }
+},
+{
+  "model": "properties.propertyimage",
+  "pk": 15,
+  "fields": {
+    "property": 11,
+    "image": "properties/gallery/interior-4.jpg",
+    "alt_text": "",
+    "created_at": "2026-11-08T21:54:43.081Z"
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 1,
+  "fields": {
+    "full_name": "Austine Lopez",
+    "position": "Real Estate Investment Advisor",
+    "bio": "Lopez is a results-oriented real estate investment advisor with five years of experience supporting individuals and businesses interested in property investment. He focuses on identifying promising investment opportunities, evaluating property potential and guiding clients through property acquisition. Daniel believes in informed decision-making and works to ensure clients understand the opportunities and considerations involved in every investment.",
+    "years_experience": 5,
+    "achievements": "Assisted clients in identifying promising property investment opportunities.\r\nDeveloped expertise in commercial property research and evaluation.\r\nBuilt professional relationships with property investors and developers.\r\nRecognized for providing practical and informed investment guidance.",
+    "specializations": "Real Estate Investment\r\nCommercial Properties\r\nLand Acquisition\r\nInvestment Property Analysis\r\nProperty Market Research",
+    "photo": "agents/team-1.jpg",
+    "email": "lopez@propertyplus.com",
+    "phone": "0199922211",
+    "twitter": "https://www.x.com/lopez",
+    "facebook": "https://www.facebook.com/lopez",
+    "instagram": "https://www.instagram.com/lopez",
+    "linkedin": "https://www.linkedin.com/lopez",
+    "is_active": true,
+    "created_at": "2026-11-06T10:53:02.933Z",
+    "updated_at": "2026-11-06T15:11:43.973Z",
+    "services": [
+      3,
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 2,
+  "fields": {
+    "full_name": "Paul Quintus",
+    "position": "Senior Property Consultant",
+    "bio": "James Mwangi is an experienced real estate professional with over eight years of experience helping clients find suitable residential and investment properties. He has developed a strong understanding of the local property market and is committed to delivering reliable advice, transparent communication and exceptional customer service. James takes pride in helping buyers make informed property decisions while supporting sellers in achieving competitive market value.",
+    "years_experience": 8,
+    "achievements": "Recognized for outstanding client service in 2023.\r\nSuccessfully assisted numerous families in finding suitable homes.\r\nBuilt a strong network of property buyers and investors.\r\nConsistently achieved excellent client satisfaction.",
+    "specializations": "Residential Property Sales\r\nProperty Investment\r\nProperty Valuation\r\nFirst-Time Home Buyers",
+    "photo": "agents/team-3.jpg",
+    "email": "paul@propertyplus.com",
+    "phone": "0788844400",
+    "twitter": "https://x.com/paul",
+    "facebook": "https://www.facebook.com/paul",
+    "instagram": "https://www.instagram.com/paul",
+    "linkedin": "https://www.linkedin.com/paul",
+    "is_active": true,
+    "created_at": "2026-11-06T11:28:07.545Z",
+    "updated_at": "2026-11-06T15:14:10.646Z",
+    "services": [
+      3,
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 3,
+  "fields": {
+    "full_name": "Sarah Conor",
+    "position": "Property Management Specialist",
+    "bio": "Conor is a dedicated property management professional with six years of experience in rental administration, tenant relations and property marketing. She works closely with landlords and tenants to ensure smooth property operations, timely communication and effective management solutions. Her attention to detail and commitment to professionalism make her a trusted contact for clients seeking dependable property management services.",
+    "years_experience": 5,
+    "achievements": "Successfully coordinated the management of multiple residential rental properties.\r\nImproved tenant communication and property management processes.\r\nRecognized for professionalism and effective client relationship management.\r\nDeveloped strong relationships with landlords and property owners.",
+    "specializations": "Residential Property Management\r\nRental Administration\r\nTenant Screening\r\nProperty Marketing\r\nLandlord and Tenant Relations",
+    "photo": "agents/team-2.jpg",
+    "email": "conor@propertyplus.com",
+    "phone": "0711199933",
+    "twitter": "https://x.com/conor",
+    "facebook": "https://www.facebook.com/conor",
+    "instagram": "https://www.instagram.com/conor",
+    "linkedin": "https://www.linkedin.com/conor",
+    "is_active": true,
+    "created_at": "2026-11-06T11:37:26.729Z",
+    "updated_at": "2026-11-06T15:11:55.465Z",
+    "services": [
+      6,
+      5,
+      4
+    ]
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 4,
+  "fields": {
+    "full_name": "David Miller",
+    "position": "Senior Property Consultant",
+    "bio": "David is an experienced property consultant specializing in residential and commercial real estate. He helps clients identify valuable investment opportunities and navigate property transactions with confidence.",
+    "years_experience": 8,
+    "achievements": "Successfully facilitated numerous property transactions.\r\nBuilt strong relationships with property investors.\r\nRecognized for excellent client service.",
+    "specializations": "Residential property sales\r\nCommercial properties\r\nProperty investment\r\nMarket analysis",
+    "photo": "agents/staff-1.jpg",
+    "email": "david@propertyplus.com",
+    "phone": "0199922288",
+    "twitter": "https://x.com/david",
+    "facebook": "https://www.facebook.com/david",
+    "instagram": "https://www.instagram.com/david",
+    "linkedin": "https://www.linkedin.com/david",
+    "is_active": true,
+    "created_at": "2026-11-08T21:32:25.336Z",
+    "updated_at": "2026-11-08T21:37:46.020Z",
+    "services": [
+      3,
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 5,
+  "fields": {
+    "full_name": "Hopkins Grace",
+    "position": "Luxury Real Estate Specialist",
+    "bio": "Grace specializes in helping clients find quality homes and premium residential properties. Her approach focuses on understanding individual client needs and delivering personalized property solutions.",
+    "years_experience": 6,
+    "achievements": "Developed a strong network of residential property buyers.\r\nSuccessfully supported premium home acquisitions.\r\nConsistently delivers personalized client experiences.",
+    "specializations": "Luxury homes\r\nResidential property sales\r\nProperty viewing coordination\r\nClient relationship management",
+    "photo": "agents/staff-3.jpg",
+    "email": "grace@propertyplus.com",
+    "phone": "0711122299",
+    "twitter": "https://x.com/grace",
+    "facebook": "https://www.facebook.com/grace",
+    "instagram": "https://www.instagram.com/grace",
+    "linkedin": "https://www.linkedin.com/grace",
+    "is_active": true,
+    "created_at": "2026-11-08T21:37:26.606Z",
+    "updated_at": "2026-11-08T21:37:26.606Z",
+    "services": [
+      3,
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 6,
+  "fields": {
+    "full_name": "Policap Brian",
+    "position": "Property Investment Advisor",
+    "bio": "Brian works with individuals and investors seeking profitable property opportunities. He focuses on land acquisition, investment evaluation, and helping clients make informed real estate decisions",
+    "years_experience": 5,
+    "achievements": "Assisted clients in identifying promising investment opportunities.\r\nBuilt experience in land acquisition.\r\nProvides detailed property investment guidance.",
+    "specializations": "Land and plots\r\nProperty investment\r\nReal estate market research\r\nInvestment consultation",
+    "photo": "agents/staff-2.jpg",
+    "email": "policap@propertyplus.com",
+    "phone": "0199900022",
+    "twitter": "https://x.com/policap",
+    "facebook": "https://www.facebook.com/policap",
+    "instagram": "https://www.instagram.com/policap",
+    "linkedin": "https://www.linkedin.com/policap",
+    "is_active": true,
+    "created_at": "2026-11-08T21:42:07.014Z",
+    "updated_at": "2026-11-08T21:42:07.014Z",
+    "services": [
+      7,
+      5,
+      8,
+      4
+    ]
+  }
+},
+{
+  "model": "core.service",
+  "pk": 3,
+  "fields": {
+    "title": "Property Sales",
+    "slug": "property-sales",
+    "short_description": "Helping you buy and sell residential and commercial properties with confidence through professional guidance and personalized support.",
+    "description": "PropertyPlus offers professional property sales services designed to make buying and selling real estate straightforward and rewarding. Whether you are looking for your dream home, selling an existing property, or investing in commercial real estate, our team is committed to helping you achieve your goals.\r\n\r\nWe assist buyers in identifying suitable properties based on their preferences, location and budget. For sellers, we help showcase properties, connect with potential buyers and guide them through the selling process.\r\n\r\nOur goal is to make every property transaction transparent, convenient and successful.",
+    "icon": "bi-house-check",
+    "image": "services/lease-2.jpg",
+    "is_active": true,
+    "display_order": 2,
+    "created_at": "2026-11-05T19:28:23.037Z"
+  }
+},
+{
+  "model": "core.service",
+  "pk": 4,
+  "fields": {
+    "title": "Property Rentals and Leasing",
+    "slug": "property-rentals-and-leasing",
+    "short_description": "Connecting landlords with suitable tenants while helping individuals and businesses find quality rental properties that meet their needs",
+    "description": "Finding the right rental property or securing reliable tenants requires time, experience and proper coordination. PropertyPlus provides rental and leasing services that simplify the process for both property owners and prospective tenants.\r\n\r\nWe help tenants discover suitable residential and commercial spaces based on their preferred location, budget and requirements. We also assist landlords in marketing available properties, coordinating property viewings and connecting with prospective tenants.\r\n\r\nWhether you are searching for an apartment, family home, office or commercial space, PropertyPlus helps make the rental process easier and more convenient.",
+    "icon": "bi-key",
+    "image": "services/lease-1.jpg",
+    "is_active": true,
+    "display_order": 6,
+    "created_at": "2026-11-05T19:31:02.888Z"
+  }
+},
+{
+  "model": "core.service",
+  "pk": 5,
+  "fields": {
+    "title": "Property Management",
+    "slug": "property-management",
+    "short_description": "Professional property management solutions covering tenant coordination, rent collection, maintenance and day-to-day property supervision.",
+    "description": "Managing a property effectively requires consistent attention, organization and communication. PropertyPlus provides property management services that help property owners maintain their investments while reducing the demands of daily management.\r\n\r\nOur services include coordinating tenant relationships, monitoring rental payments, arranging maintenance activities and overseeing general property operations.\r\n\r\nWe aim to protect property value, improve tenant satisfaction and help owners maintain well-managed properties. Whether you own a single rental unit or multiple properties, our management approach is designed to support your investment goals.",
+    "icon": "bi-buildings",
+    "image": "services/features-bg_50SAjN6.jpg",
+    "is_active": true,
+    "display_order": 4,
+    "created_at": "2026-11-05T19:32:50.996Z"
+  }
+},
+{
+  "model": "core.service",
+  "pk": 6,
+  "fields": {
+    "title": "Property Marketing",
+    "slug": "property-marketing",
+    "short_description": "Showcasing properties through professional presentation, digital listings and targeted marketing to reach potential buyers and tenants.",
+    "description": "Effective property marketing plays an important role in attracting the right buyers and tenants. At PropertyPlus, we help property owners present their properties professionally and reach a wider audience through strategic marketing approaches.\r\n\r\nOur marketing activities include preparing attractive property listings, organizing property photographs, promoting available properties online and highlighting important property features.\r\n\r\nBy combining clear property information with effective digital promotion, we aim to increase property visibility, generate interest and connect property owners with prospective clients.",
+    "icon": "bi-megaphone",
+    "image": "services/services_wvnd250.jpg",
+    "is_active": true,
+    "display_order": 1,
+    "created_at": "2026-11-05T19:35:45.457Z"
+  }
+},
+{
+  "model": "core.service",
+  "pk": 7,
+  "fields": {
+    "title": "Property Valuation",
+    "slug": "property-valuation",
+    "short_description": "Helping property owners and buyers understand property market worth through property assessments, market research and comparative analysis.",
+    "description": "Helping property owners and buyers understand property market worth through property assessments, market research and comparative analysis.\r\n\r\nFull description\r\n\r\nUnderstanding the value of a property is essential when buying, selling or making real estate investment decisions. PropertyPlus provides property valuation support to help clients gain a better understanding of property market values.\r\n\r\nOur approach considers factors such as property location, size, condition, available facilities and comparable market listings to support informed property assessments.\r\n\r\nWhether you are preparing to sell, considering an investment or evaluating a property purchase, we help you understand the factors that influence property value.\r\n\r\nNote: Formal valuation reports requiring a licensed valuer should be undertaken by appropriately qualified professionals.",
+    "icon": "bi-clipboard-data",
+    "image": "services/floor-plan.jpg",
+    "is_active": true,
+    "display_order": 3,
+    "created_at": "2026-11-05T19:37:11.836Z"
+  }
+},
+{
+  "model": "core.service",
+  "pk": 8,
+  "fields": {
+    "title": "Real Estate Consultancy",
+    "slug": "real-estate-consultancy",
+    "short_description": "Providing informed real estate guidance to buyers, sellers and investors seeking better property and investment decisions.",
+    "description": "Making the right real estate decision requires an understanding of market conditions, property opportunities and investment objectives. PropertyPlus offers real estate consultancy services to help clients navigate the property market with greater confidence.\r\n\r\nWe provide guidance on property selection, investment opportunities, location considerations, purchasing decisions and general real estate market trends.\r\n\r\nWhether you are a first-time buyer, an experienced investor or a property owner exploring new opportunities, our consultancy services are designed to help you evaluate your options and make informed decisions.",
+    "icon": "bi-chat-square-text",
+    "image": "services/consult-3.jpg",
+    "is_active": true,
+    "display_order": 5,
+    "created_at": "2026-11-05T19:39:13.223Z"
+  }
+},
+{
+  "model": "core.testimonial",
+  "pk": 1,
+  "fields": {
+    "client_name": "Sendy Wells",
+    "client_role": "First-time Home Buyer",
+    "message": "PropertyPlus made finding my first home an enjoyable experience. The team was patient, professional, and always ready to answer my questions. They made the entire process much easier than I expected",
+    "rating": 5,
+    "photo": "testimonials/testimonials-3.jpg",
+    "is_active": true,
+    "created_at": "2026-11-08T13:23:27.289Z"
+  }
+},
+{
+  "model": "core.testimonial",
+  "pk": 2,
+  "fields": {
+    "client_name": "Nick Riley",
+    "client_role": "Property Buyer",
+    "message": "I appreciated the transparency and attention to detail throughout my property search. The team understood exactly what I was looking for and helped me explore suitable options without unnecessary pressure.",
+    "rating": 5,
+    "photo": "testimonials/testimonials-1.jpg",
+    "is_active": true,
+    "created_at": "2026-11-08T13:24:38.721Z"
+  }
+},
+{
+  "model": "core.testimonial",
+  "pk": 3,
+  "fields": {
+    "client_name": "Dan Washington",
+    "client_role": "Property Seller",
+    "message": "Selling my property felt less stressful with PropertyPlus. Communication was consistent, the guidance was helpful, and I felt supported at every stage of the process.",
+    "rating": 4,
+    "photo": "testimonials/testimonials-4.jpg",
+    "is_active": true,
+    "created_at": "2026-11-08T13:25:48.295Z"
+  }
+},
+{
+  "model": "core.testimonial",
+  "pk": 4,
+  "fields": {
+    "client_name": "Quaintus Aurilious",
+    "client_role": "Tenant",
+    "message": "The team helped me find a comfortable place that matched my budget and preferences. I especially appreciated how quickly they responded to my enquiries.",
+    "rating": 5,
+    "photo": "testimonials/testimonials-5.jpg",
+    "is_active": true,
+    "created_at": "2026-11-08T13:26:45.273Z"
+  }
+},
+{
+  "model": "core.testimonial",
+  "pk": 5,
+  "fields": {
+    "client_name": "Brittney David",
+    "client_role": "Property Investor",
+    "message": "PropertyPlus provided useful insights that helped me make a more informed investment decision. Their professionalism and understanding of the property market made a great impression.",
+    "rating": 3,
+    "photo": "testimonials/testimonials-2.jpg",
+    "is_active": true,
+    "created_at": "2026-11-08T13:27:42.945Z"
+  }
+}
+]
