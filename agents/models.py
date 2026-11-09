@@ -4,7 +4,7 @@ class Agent(models.Model):
     full_name = models.CharField(max_length=45)
     position = models.CharField(max_length=50, help_text="e.g. Senior Real Estate Agent")
     bio = models.TextField()
-    years_experience = models.PositiveIntegerField(default=0, help_text="No. of years of professional experience")
+    years_experience = models.PositiveIntegerField(default=0, help_text="Number of years of professional experience")
     achievements = models.TextField(blank=True, help_text="Awards, accomplishments and professional milestones")
     specializations = models.TextField(blank=True, help_text="Areas of expertise and specialization")
     services = models.ManyToManyField('core.Service', blank=True, related_name='agents', help_text="Services offered by the agent")

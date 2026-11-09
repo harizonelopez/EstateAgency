@@ -4,7 +4,7 @@ from django.utils.text import slugify
 class Service(models.Model):
     title = models.CharField(max_length=60)
     slug = models.SlugField(
-        max_length=120,
+        max_length=60,
         unique=True,
         blank=True
     )

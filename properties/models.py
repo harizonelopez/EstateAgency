@@ -33,7 +33,7 @@ class Property(models.Model):
     )
 
     location = models.CharField(max_length=50)
-    area = models.DecimalField(max_digits=4, decimal_places=2)
+    area = models.DecimalField(max_digits=10, decimal_places=2)
     bedrooms = models.PositiveIntegerField(default=0)
     bathrooms = models.PositiveIntegerField(default=0)
     garages = models.PositiveIntegerField(default=0)
